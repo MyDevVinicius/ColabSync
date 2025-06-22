@@ -79,4 +79,4 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull r
 
 ## ✨ Autor
 
-Desenvolvido com dedicação por [Seu Nome]. Inspirado pela necessidade real de controle simples e eficiente de ativos em ambientes empresariais.
+Desenvolvido com dedicação por Vinicius Nascimento. Inspirado pela necessidade real de controle simples e eficiente de ativos em ambientes empresariais.
