@@ -36,8 +36,8 @@ colabsync/
 ├── backend/         # API e lógica de negócios (em definição)
 ├── api/             # Documentação de API (ex: Swagger)
 ├── sql/
-│   ├── criacao_tabelas_norsync.sql
-│   └── insercao_dados_norsync.sql
+│   ├── criacao_tabelas_colabsync.sql
+│   └── insercao_dados_colabsync.sql
 ├── docs/            # Diagramas e documentação técnica
 ├── README.md
 └── LICENSE
