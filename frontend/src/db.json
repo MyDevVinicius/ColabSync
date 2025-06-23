@@ -1,0 +1,162 @@
+{
+    "empresa": [
+        {
+            "id": 1,
+            "nome": "Empresa A",
+            "cnpj": 12345678901234
+        },
+        {
+            "id": 2,
+            "nome": "Empresa B",
+            "cnpj": 23456789012345
+        }
+    ],
+    "departamento": [
+        {
+            "id": 1,
+            "nome": "Departamento de TI"
+        },
+        {
+            "id": 2,
+            "nome": "Departamento de RH"
+        }
+    ],
+    "colaborador": [
+        {
+            "id": 1,
+            "nome": "Jo\u00e3o Silva",
+            "cargo": "Desenvolvedor",
+            "email": "joao.silva@example.com",
+            "departamento_id": 1,
+            "empresa_id": 1
+        },
+        {
+            "id": 2,
+            "nome": "Maria Souza",
+            "cargo": "Analista de RH",
+            "email": "maria.souza@example.com",
+            "departamento_id": 2,
+            "empresa_id": 2
+        }
+    ],
+    "usuario": [
+        {
+            "id": 1,
+            "email_institucional": "joao.silva@empresaA.com",
+            "senha": "senha123",
+            "departamento_id": 1,
+            "empresa_id": 1
+        },
+        {
+            "id": 2,
+            "email_institucional": "maria.souza@empresaB.com",
+            "senha": "senha456",
+            "departamento_id": 2,
+            "empresa_id": 2
+        }
+    ],
+    "marca": [
+        {
+            "id": 1,
+            "nome": "Marca X"
+        },
+        {
+            "id": 2,
+            "nome": "Marca Y"
+        }
+    ],
+    "ativos": [
+        {
+            "id": 1,
+            "etiqueta": "A001",
+            "modelo": "Modelo A",
+            "serial_number": 1111111111,
+            "data_aquisicao": "2023-01-01",
+            "final_garantia": "2024-01-01",
+            "ultima_manutencao": "2023-06-01",
+            "tipo": "notebook",
+            "comentario": "Ativo em bom estado",
+            "marca_id": 1
+        },
+        {
+            "id": 2,
+            "etiqueta": "A002",
+            "modelo": "Modelo B",
+            "serial_number": 2222222222,
+            "data_aquisicao": "2023-02-01",
+            "final_garantia": "2024-02-01",
+            "ultima_manutencao": "2023-07-01",
+            "tipo": "desktop",
+            "comentario": "Ativo em bom estado",
+            "marca_id": 2
+        }
+    ],
+    "equipamento": [
+        {
+            "id": 1,
+            "processador": "Intel i7",
+            "memoria": "16GB",
+            "armazenamento": "512GB SSD",
+            "sistema_operacional": "Windows 10"
+        },
+        {
+            "id": 2,
+            "processador": "AMD Ryzen 5",
+            "memoria": "8GB",
+            "armazenamento": "1TB HDD",
+            "sistema_operacional": "Windows 10"
+        }
+    ],
+    "monitor": [
+        {
+            "id": 1,
+            "cor": "Preto",
+            "polegadas": "24",
+            "resolucao": "1920x1080"
+        },
+        {
+            "id": 2,
+            "cor": "Branco",
+            "polegadas": "27",
+            "resolucao": "2560x1440"
+        }
+    ],
+    "impressora": [
+        {
+            "id": 1,
+            "tipo": "USB",
+            "modelo_toner": "Toner X"
+        },
+        {
+            "id": 2,
+            "tipo": "REDE",
+            "modelo_toner": "Toner Y"
+        }
+    ],
+    "licencas": [
+        {
+            "id": 1,
+            "nome": "Licen\u00e7a A"
+        },
+        {
+            "id": 2,
+            "nome": "Licen\u00e7a B"
+        }
+    ],
+    "alocacoes": [
+        {
+            "id": 1,
+            "ativos_id": 1,
+            "colaborador_id": 1,
+            "status": "ativo",
+            "data_alocacao": "2023-01-01"
+        },
+        {
+            "id": 2,
+            "ativos_id": 2,
+            "colaborador_id": 2,
+            "status": "inativo",
+            "data_alocacao": "2023-02-01"
+        }
+    ]
+}
