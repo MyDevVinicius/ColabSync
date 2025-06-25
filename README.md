@@ -17,6 +17,7 @@
 - 🔄 Controle de alocação de equipamentos por colaborador
 - 📊 Consultas avançadas por tipo, status ou colaborador
 - 📦 Base de dados modelada em PostgreSQL
+- 📲 Monitoramento de Desktop e notebooks
 
 ---
 
