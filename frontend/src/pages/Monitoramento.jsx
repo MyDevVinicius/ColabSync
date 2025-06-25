@@ -6,7 +6,6 @@ const Monitoramento = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Função que formata o tempo decorrido (em ms) em string "Xm Ys"
   const formatElapsedTime = (ms) => {
     const totalSeconds = Math.floor(ms / 1000);
     const m = Math.floor(totalSeconds / 60);
@@ -32,7 +31,7 @@ const Monitoramento = () => {
 
   useEffect(() => {
     fetchMaquinas();
-    const interval = setInterval(fetchMaquinas, 10000); // Atualiza a cada 10s
+    const interval = setInterval(fetchMaquinas, 10000);
     return () => clearInterval(interval);
   }, []);
 
@@ -40,9 +39,7 @@ const Monitoramento = () => {
 
   return (
     <Layout>
-      <div className="p-4 full flex flex-col justify-center h-[5rem] items-center">
-        <h1 className="text-2xl font-bold mb-4">Monitoramento de Ativos</h1>
-
+      <div className="px-4 py-6 max-w-screen-xl mx-auto space-y-4">
         {loading && <p>Carregando dados...</p>}
         {error && <p className="text-red-500">Erro: {error}</p>}
         {!loading && !error && maquinas.length === 0 && (
@@ -50,73 +47,50 @@ const Monitoramento = () => {
         )}
 
         {!loading && !error && maquinas.length > 0 && (
-          <table className="min-w-full border-collapse border border-gray-300">
-            <thead>
-              <tr className="bg-gray-200 sticky top-0">
-                <th className="border border-gray-300 px-3 py-1 text-left">
-                  Nome da Máquina
-                </th>
-                <th className="border border-gray-300 px-3 py-1 text-left">
-                  Usuário Logado
-                </th>
-                <th className="border border-gray-300 px-3 py-1 text-left">
-                  Status
-                </th>
-                <th className="border border-gray-300 px-3 py-1 text-left">
-                  Tempo desde última atualização
-                </th>
-                <th className="border border-gray-300 px-3 py-1 text-left">
-                  Endereço IP
-                </th>
-                <th className="border border-gray-300 px-3 py-1 text-left">
-                  MAC
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {maquinas.map((m, idx) => {
-                const elapsed = now - m.lastSeen;
-                const isOnline = elapsed < 60000; // online se atualizado nos últimos 60s
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            {maquinas.map((m, idx) => {
+              const elapsed = now - m.lastSeen;
+              const isOnline = elapsed < 60000;
 
-                return (
-                  <tr
-                    key={idx}
-                    className={idx % 2 === 0 ? "bg-white" : "bg-gray-50"}
-                  >
-                    <td className="border border-gray-300 px-3 py-1">
+              return (
+                <div
+                  key={idx}
+                  className="bg-white rounded-xl shadow p-3 border border-gray-200 flex flex-col gap-1.5"
+                >
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-sm font-semibold truncate">
                       {m["Nome do Computador"]}
-                    </td>
-                    <td className="border border-gray-300 px-3 py-1">
-                      {m["Usuário Logado"]}
-                    </td>
-                    <td className="border border-gray-300 px-3 py-1">
-                      <span
-                        style={{
-                          display: "inline-block",
-                          width: 12,
-                          height: 12,
-                          borderRadius: "50%",
-                          backgroundColor: isOnline ? "green" : "red",
-                          marginRight: 6,
-                        }}
-                        title={isOnline ? "Ativo" : "Desconectado"}
-                      />
-                      {isOnline ? "Ativo" : "Desconectado"}
-                    </td>
-                    <td className="border border-gray-300 px-3 py-1">
-                      {formatElapsedTime(elapsed)}
-                    </td>
-                    <td className="border border-gray-300 px-3 py-1">
-                      {m["Endereço IP"]}
-                    </td>
-                    <td className="border border-gray-300 px-3 py-1">
-                      {m["MAC (Wi-Fi)"] || m["MAC (Cabo)"] || "-"}
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+                    </h3>
+                    <span
+                      className={`w-2.5 h-2.5 rounded-full ${
+                        isOnline ? "bg-green-500" : "bg-red-500"
+                      }`}
+                      title={isOnline ? "Ativo" : "Desconectado"}
+                    />
+                  </div>
+                  <p className="text-xs text-gray-600">
+                    <span className="font-medium">Usuário:</span>{" "}
+                    {m["Usuário Logado"]}
+                  </p>
+                  <p className="text-xs text-gray-600">
+                    <span className="font-medium">Status:</span>{" "}
+                    {isOnline ? "Ativo" : "Desconectado"}
+                  </p>
+                  <p className="text-xs text-gray-600">
+                    <span className="font-medium">Atualizado:</span>{" "}
+                    {formatElapsedTime(elapsed)}
+                  </p>
+                  <p className="text-xs text-gray-600">
+                    <span className="font-medium">IP:</span> {m["Endereço IP"]}
+                  </p>
+                  <p className="text-xs text-gray-600">
+                    <span className="font-medium">MAC:</span>{" "}
+                    {m["MAC (Wi-Fi)"] || m["MAC (Cabo)"] || "-"}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
         )}
       </div>
     </Layout>
