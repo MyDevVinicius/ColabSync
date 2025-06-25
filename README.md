@@ -72,11 +72,17 @@ Este projeto está licenciado sob a Licença MIT. Veja o arquivo `LICENSE` para 
 
 ---
 
-## 🤝 Contribuições
+## 🤝 Contribuindo
 
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests.
+Contribuições são bem-vindas! Se você quiser sugerir melhorias, corrigir bugs ou adicionar funcionalidades, siga os passos abaixo:
 
----
+1. Faça um fork deste repositório
+2. Crie uma branch: `git checkout -b minha-melhoria`
+3. Faça suas alterações e dê commit: `git commit -m 'minha melhoria'`
+4. Envie para seu fork: `git push origin minha-melhoria`
+5. Crie um Pull Request aqui no GitHub
+
+Sinta-se à vontade para abrir issues para discutir ideias, bugs ou sugestões!
 
 ## ✨ Autor
 
