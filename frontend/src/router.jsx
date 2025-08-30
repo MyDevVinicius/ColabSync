@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import Install from "./pages/Install";
+import Login from "./pages/Login";
 
 import Home from "./pages/Home";
 import Cadastro from "./pages/Cadastro";
@@ -10,7 +10,7 @@ import Monitoramento from "./pages/Monitoramento";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Install />,
+    element: <Login />,
   },
   {
     path: "/home",
